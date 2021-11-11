@@ -6,19 +6,19 @@
 
 <body>
     <h1>Sua trajetoria</h1>
+
+    {%for day in days%}
     <div class="card">
-        <div class="resummo">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi...</p>
+        <p>{{day.created_date}}</p>
+        <div class="leave_text">
+            <p>{{day.leave_text}}</p>
         </div>
-        <div class="resummo">
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-                rem
-                aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                explicabo...</p>
+        <div class="gratitude_text">
+            <p>{{day.gratitude_text|linebreaksbr}}</p>
         </div>
     </div>
+    {% endfor %}
+
 </body>
 
 </html>
