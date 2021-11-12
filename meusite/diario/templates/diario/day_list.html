@@ -1,24 +1,22 @@
-<html>
-
-<head>
-    <title>Diário</title>
-</head>
-
-<body>
-    <h1>Sua trajetoria</h1>
-
-    {%for day in days%}
+{% extends "diario/base.html" %}
+{% block content %}
+<h3>Sua trajetoria</h3>
+{%for day in days%}
+<a href="{% url 'day_detail' pk=day.pk %}" class="fill-div">
     <div class="card">
-        <p>{{day.created_date}}</p>
-        <div class="leave_text">
-            <p>{{day.leave_text}}</p>
-        </div>
-        <div class="gratitude_text">
-            <p>{{day.gratitude_text|linebreaksbr}}</p>
+        <div class="container">
+
+            <p>{{day.created_date}}</p>
+            <h5>Deixarei no dia de hoje:</h5>
+            <div class="leave_text">
+                <p>{{day.leave_text}}</p>
+            </div>
+            <h5>Estou grato por:</h5>
+            <div class="gratitude_text">
+                <p>{{day.gratitude_text|linebreaksbr}}</p>
+            </div>
         </div>
     </div>
-    {% endfor %}
-
-</body>
-
-</html>
+</a>
+{% endfor %}
+{% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 import git
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -13,6 +13,11 @@ def day_list(request):
 def day_list(request):
     days = Day.objects.filter(created_date__lte=timezone.now())
     return render(request, "diario/day_list.html", {"days": days})
+
+
+def day_detail(request, pk):
+    day = get_object_or_404(Day, pk=pk)
+    return render(request, "diario/day_detail.html", {'day': day})
 
 
 # Git Webhook

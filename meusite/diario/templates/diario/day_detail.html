@@ -1,0 +1,17 @@
+{% extends 'diario/base.html' %}
+{% block content %}
+<h3>Esse foi o seu dia</h3>
+<div class="card">
+    <div class="container">
+        <p>{{day.created_date}}</p>
+        <h5>Deixarei no dia de hoje:</h5>
+        <div class="leave_text_complete">
+            <p>{{day.leave_text}}</p>
+        </div>
+        <h5>Estou grato por:</h5>
+        <div class="gratitude_text_complete">
+            <p>{{day.gratitude_text|linebreaksbr}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
