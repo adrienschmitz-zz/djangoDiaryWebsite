@@ -1,5 +1,11 @@
 {% extends "diario/base.html" %}
 {% block content %}
+<div class="new-day">
+    {% if user.is_authenticated %}
+    <a href="{% url 'day_new' %}" class="btn btn-info"><span class="glyphicon glyphicon-plus">Novo
+            dia</span></a>
+    {% endif %}
+</div>
 <h3>Sua trajetoria</h3>
 {%for day in days%}
 <a href="{% url 'day_detail' pk=day.pk %}" class="fill-div">

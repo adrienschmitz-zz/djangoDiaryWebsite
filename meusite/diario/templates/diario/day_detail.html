@@ -3,6 +3,12 @@
 <h3>Esse foi o seu dia</h3>
 <div class="card">
     <div class="container">
+        <div class="new-day">
+            {% is user.is_authenticated %}
+            <a href="{% url 'day_edit' pk=day.pk %}" class="btn btn-info"><span class="glyphicon glyphicon-plus">Editar
+                    dia</span></a>
+            {% endif %}
+        </div>
         <p>{{day.created_date}}</p>
         <h5>Deixarei no dia de hoje:</h5>
         <div class="leave_text_complete">

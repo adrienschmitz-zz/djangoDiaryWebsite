@@ -7,6 +7,10 @@ h2 {
   margin-left: 20px;
 }
 
+.new-day {
+  display: block;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -18,14 +22,13 @@ h2 {
 }
 
 .container {
-  display:block
+  display: block;
   text-align: justify;
   padding: 5px 16px;
 }
 
 .leave_text,
 .gratitude_text {
-
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

@@ -1,0 +1,14 @@
+{% extends 'diario/base.html' %}
+
+{% block content %}
+<h3>Novo dia/h3>
+    <div class="card">
+        <div class="container">
+            <h5>Deixarei no dia de hoje:</h5>
+            <form method="POST" class="post-form">{% csrf_token %}
+                {{ form.as_p}} <h5>Estou grato por:</h5>
+                <button type="submit" class="save btn btn-default">Salvar</button>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
